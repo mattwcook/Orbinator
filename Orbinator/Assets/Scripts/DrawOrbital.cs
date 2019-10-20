@@ -21,16 +21,17 @@ public class DrawOrbital : MonoBehaviour
         verticeArray = new Vector3[360 + 1];
         GetComponent<LineRenderer>().positionCount = 360 + 1;
 
-        for (int h =0; h<= 360; h++)
+        for (int h = 0; h <= 360; h++)
         {
             verticeArray[h] = new Vector3(Mathf.Cos(h * Mathf.PI / 180.0f), 0.0f, Mathf.Sin(h * Mathf.PI / 180.0f)) * radius;
         }
         GetComponent<LineRenderer>().SetPositions(verticeArray);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
