@@ -22,16 +22,17 @@ public class OrbitalSelection : MonoBehaviour
     float lineThickness = .1f;
 
     // Relative to Mothership
-    float maxAngle;
-    float minAngle;
-    float maxAltitude;
-    float minAltitude;
-    float maxInclination;
-    float minInclination;
-
+    float maxAngle = 90.0f;
+    float minAngle = 30.0f;
+    float maxAltitude = 20.0f;
+    float minAltitude = -20.0f;
+    float maxInclination = 60.0f;
+    float minInclination = -60.0f;
+    int numberOfJunks = 100;
     float junkAngle;
     float junkAltitude;
     float junkInclination;
+    
 
     Vector3[] verticeArray;
 
@@ -44,7 +45,7 @@ public class OrbitalSelection : MonoBehaviour
         radiusRight = radiusMiddle + radialSpacing;
         radiusFarRight = radiusMiddle + 2 * radialSpacing;
 
-        for (int i = 0; i<=5; i++)
+        for (int i = 0; i<=4; i++)
         {
             for (int h = -1 * Mathf.RoundToInt(inclinationSpacing); h <= Mathf.RoundToInt(inclinationSpacing); h += Mathf.RoundToInt(inclinationSpacing))
             {
@@ -52,7 +53,14 @@ public class OrbitalSelection : MonoBehaviour
             }
         }
 
+        for (int i = 0; i <= numberOfJunks; i++)
+        {
+            junkAngle = Random.Range(minAngle, maxAngle);
+            junkAltitude = Random.Range(minAltitude, maxAltitude);
+            junkInclination = Random.Range(minInclination, maxInclination);
 
+
+        }
     }
     
     // Update is called once per frame
